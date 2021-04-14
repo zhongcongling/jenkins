@@ -1,6 +1,13 @@
+docker run -u root --name jenkins \
+-v /jenkins:/var/jenkins_home \
+-p 8080:8080 \
+-p 50000:50000 \
+-itd 10fafa8484ea
+
+
 docker run --name jenkins-slave \
 -v /var/run/docker.sock:/var/run/docker.sock \
--v /usr/local/bin/docker:/usr/bin/docker \
+-v /usr/bin/docker:/usr/bin/docker \
 -itd jenkins/jnlp-slave:4.7-3-alpine \
 -workDir=/home/jenkins/agent \
 -url http://172.17.160.105:8080 \
