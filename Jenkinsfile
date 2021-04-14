@@ -6,7 +6,7 @@ pipeline {
   agent {node {label "build"}}
  
   stages {
-    stage('build') {
+    stage("build") {
       steps {
         script{
           mvnHome = tool "maven"
