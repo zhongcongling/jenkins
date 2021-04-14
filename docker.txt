@@ -16,6 +16,18 @@ rm -rf /var/lib/docker
 
 rm -rf /var/run/docker  
 
+备份原有yum源
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+下载yum源
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+或 curl -O  http://mirrors.aliyun.com/repo/Centos-7.repo
+
+生成缓存
+yum clean
+yum makecache
+yum update 
+
 新装docker
 1、安装仓库所需要的软件包
 yum install -y yum-utils device-mapper-persistent-data lvm2
