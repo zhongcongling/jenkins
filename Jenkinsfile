@@ -6,9 +6,9 @@ pipeline {
 
   }
   stages {
-    stage('') {
+    stage('shell') {
       steps {
-        sh 'date'
+        sh 'ansible --version'
       }
     }
 
