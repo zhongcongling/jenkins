@@ -1,8 +1,10 @@
 #!groovy
-pipeline {
-  agent {node {label 'build'}}
   
-  String buildShell = "${env.buildShell}"
+String buildShell = "${env.buildShell}"
+
+pipeline {
+  agent {node {label "build"}}
+ 
   stages {
     stage('build') {
       steps {
