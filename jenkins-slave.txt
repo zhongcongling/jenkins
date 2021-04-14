@@ -1,0 +1,7 @@
+docker run --name jenkins-slave \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /usr/local/bin/docker:/usr/bin/docker \
+-itd jenkins/jnlp-slave:4.7-3-alpine \
+-workDir=/home/jenkins/agent \
+-url http://172.17.160.105:8080 \
+7fe3e021134390aed769f2ad485feab164de952f1ff8a2a9637cececd828d2af build 
