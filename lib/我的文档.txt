@@ -1,0 +1,1 @@
+ansiblePlaybook credentialsId: 'libary', installation: 'ansible', inventory: '/data/inventory', playbook: '/data/docker.yaml'
